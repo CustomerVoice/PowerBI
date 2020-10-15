@@ -1,0 +1,8 @@
+NPSScore_Branch= 
+VAR Responses = COUNTROWS('Customer Voice Responses')
+VAR Promoters = COUNTROWS(FILTER('Customer Voice Responses', 'Customer Voice Responses'[NPS_Branch]  IN {9,10}))
+VAR Detractors = COUNTROWS(FILTER('Customer Voice Responses','Customer Voice Responses'[NPS_Branch] IN {0,1,2,3,4,5,6}))
+VAR PromotorsPercent = DIVIDE(Promoters, Responses)
+VAR DetractorsPercent = DIVIDE(Detractors, Responses)
+RETURN 
+    (PromotorsPercent - DetractorsPercent) * 100
