@@ -1,4 +1,4 @@
-NPSScore_HomeLoan= 
+Homeloan NPS= 
 VAR Responses = COUNTROWS('Customer Voice Responses')
 VAR Promoters = COUNTROWS(FILTER('Customer Voice Responses', 'Customer Voice Responses'[NPS_HomeLoan]  IN {9,10}))
 VAR Detractors = COUNTROWS(FILTER('Customer Voice Responses','Customer Voice Responses'[NPS_HomeLoan] IN {0,1,2,3,4,5,6}))
