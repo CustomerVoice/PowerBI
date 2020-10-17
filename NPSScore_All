@@ -1,7 +1,7 @@
 Overall NPS = 
-VAR Responses = COUNTROWS('Customer Voice Responses')
-VAR Promoters = COUNTROWS(FILTER('Customer Voice Responses', 'Customer Voice Responses'[NPS_All]  IN {9,10}))
-VAR Detractors = COUNTROWS(FILTER('Customer Voice Responses','Customer Voice Responses'[NPS_All] IN {0,1,2,3,4,5,6}))
+VAR Responses = COUNTROWS('Customer Voice Satisfaction Metric')
+VAR Promoters = COUNTROWS(FILTER('Customer Voice Satisfaction Metric', [42d7cb6a-6863-42f2-9431-0c6004ceee00]="promoter"))
+VAR Detractors = COUNTROWS(FILTER('Customer Voice Satisfaction Metric',[42d7cb6a-6863-42f2-9431-0c6004ceee00]="detractor"))
 VAR PromotorsPercent = DIVIDE(Promoters, Responses)
 VAR DetractorsPercent = DIVIDE(Detractors, Responses)
 RETURN 
