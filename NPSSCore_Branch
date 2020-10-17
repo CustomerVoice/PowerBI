@@ -1,7 +1,7 @@
 Branch Service NPS = 
-VAR Responses = COUNTROWS('Customer Voice Satisfaction Metric')
-VAR Promoters = COUNTROWS(FILTER('Customer Voice Satisfaction Metric', [b4bfc221-16da-4c52-8c37-37a489950d21]="promoter"))
-VAR Detractors = COUNTROWS(FILTER('Customer Voice Satisfaction Metric',[b4bfc221-16da-4c52-8c37-37a489950d21]="detractor"))
+VAR Responses = COUNTROWS('Customer Voice Survey Response')
+VAR Promoters = COUNTROWS(FILTER('Customer Voice Survey Response', [b4bfc221-16da-4c52-8c37-37a489950d21]="promoter"))
+VAR Detractors = COUNTROWS(FILTER('Customer Voice Survey Response',[b4bfc221-16da-4c52-8c37-37a489950d21]="detractor"))
 VAR PromotorsPercent = DIVIDE(Promoters, Responses)
 VAR DetractorsPercent = DIVIDE(Detractors, Responses)
 RETURN 
