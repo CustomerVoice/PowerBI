@@ -1,7 +1,7 @@
-Homeloan NPS= 
-VAR Responses = COUNTROWS('Customer Voice Responses')
-VAR Promoters = COUNTROWS(FILTER('Customer Voice Responses', 'Customer Voice Responses'[NPS_HomeLoan]  IN {9,10}))
-VAR Detractors = COUNTROWS(FILTER('Customer Voice Responses','Customer Voice Responses'[NPS_HomeLoan] IN {0,1,2,3,4,5,6}))
+Homeloan NPS = 
+VAR Responses = COUNTROWS('Customer Voice Satisfaction Metric')
+VAR Promoters = COUNTROWS(FILTER('Customer Voice Satisfaction Metric', [27deb0ac-c2ae-4b12-80e1-ed15bae1b24e]="promoter"))
+VAR Detractors = COUNTROWS(FILTER('Customer Voice Satisfaction Metric',[27deb0ac-c2ae-4b12-80e1-ed15bae1b24e]="detractor"))
 VAR PromotorsPercent = DIVIDE(Promoters, Responses)
 VAR DetractorsPercent = DIVIDE(Detractors, Responses)
 RETURN 
