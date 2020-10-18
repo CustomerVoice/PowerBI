@@ -1,7 +1,7 @@
 Branch Service NPS = 
 VAR Responses = COUNTROWS('Customer Voice Survey Response')
-VAR Promoters = COUNTROWS(FILTER('Customer Voice Survey Response', [Branch Service NPS]="promoter"))
-VAR Detractors = COUNTROWS(FILTER('Customer Voice Survey Response',[Branch Service NPS]="detractor"))
+VAR Promoters = COUNTROWS(FILTER('Customer Voice Survey Response', [NPSBranch]="promoter"))
+VAR Detractors = COUNTROWS(FILTER('Customer Voice Survey Response',[NPSBranch]="detractor"))
 VAR PromotorsPercent = DIVIDE(Promoters, Responses)
 VAR DetractorsPercent = DIVIDE(Detractors, Responses)
 RETURN 
