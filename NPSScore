@@ -1,8 +1,0 @@
-NPS Score = 
-VAR Responses = COUNTROWS('SurveyResponse')
-VAR Promoters = COUNTROWS(FILTER('SurveyResponse', [NPS]="promoter"))
-VAR Detractors = COUNTROWS(FILTER('SurveyResponse',[NPS]="detractor"))
-VAR PromotorsPercent = DIVIDE(Promoters, Responses)
-VAR DetractorsPercent = DIVIDE(Detractors, Responses)
-RETURN 
-    (PromotorsPercent - DetractorsPercent) * 100
